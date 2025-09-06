@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hijab Insta Corner - Premium Hijabs Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f3f3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #e99c9c;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d87c7c;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e99c9c;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: #e99c9c;
+        }
+
+        .header-icons a {
+            margin-left: 15px;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #e99c9c;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 245, 245, 0.8)), url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* ===== EXPANDABLE CATEGORY SECTIONS ===== */
+        .category-section {
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: #e99c9c;
+            color: white;
+            cursor: pointer;
+        }
+
+        .category-header h2 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .category-header .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .category-content.expanded {
+            max-height: 2000px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+
+        /* ===== PRODUCT CARDS ===== */
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e99c9c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            min-height: 2.8rem;
+}
+
+        .price {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .sale-price {
+            color: #e99c9c;
+            font-weight: 700;
+        }
+
+        /* ===== IMAGE VARIANTS ===== */
+        .image-variants {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .image-option {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .image-option:hover, .image-option.selected {
+            border-color: #e99c9c;
+            transform: scale(1.1);
+        }
+
+        .image-option img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .variant-name-tag {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 9px;
+            padding: 2px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* ===== STOCK INFORMATION ===== */
+        .stock-info {
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .in-stock {
+            color: #4caf50;
+            font-weight: 600;
+        }
+
+        .low-stock {
+            color: #ff9800;
+            font-weight: 600;
+        }
+
+        .out-of-stock {
+            color: #f44336;
+            font-weight: 600;
+        }
+
+        /* ===== PRODUCT DETAILS MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            position: relative;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.2s ease;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .product-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .main-gallery-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .main-gallery-image img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: zoom-in;
+        }
+
+        .product-detail-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-detail-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .detail-price {
+            font-size: 1.4rem;
+            color: #e99c9c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .product-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .quantity-selector label {
+            margin-right: 15px;
+            font-weight: 600;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* ===== CART MODAL ===== */
+        .cart-items {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-color {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0;
+        }
+
+        .color-indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+        }
+
+        .cart-item-details .price {
+            justify-content: flex-start;
+            margin: 0;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item-quantity {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .remove-from-cart {
+            background: none;
+            border: none;
+            color: #f44336;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 15px 0;
+            border-top: 2px solid #eee;
+        }
+
+        .cart-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .delivery-charge {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        /* ===== CHECKOUT MODAL ===== */
+        .checkout-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #e99c9c;
+        }
+
+        .error-message {
+            color: #f44336;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .optional-badge {
+            background: #e0e0e0;
+            color: #666;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+
+        /* ===== ORDER CONFIRMATION ===== */
+        .order-confirmation {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .order-confirmation i {
+            font-size: 4rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .order-confirmation h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* ===== FEATURED TEXT SECTION ===== */
+        .featured-text {
+            background-color: #f9f3f3;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .featured-text p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: #f9f3f3;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #e99c9c;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: #e99c9c;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .nav-menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-menu li {
+                margin: 5px 10px;
+            }
+
+            .header-icons {
+                margin-top: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .category-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .product-details {
+                flex-direction: column;
+            }
+
+            .checkout-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cart-item-controls {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .image-variants {
+                gap: 5px;
+            }
+            
+            .image-option {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .variant-name-tag {
+                font-size: 7px;
+                padding: 1px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Hijab Insta Corner</div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#collections">Our Collections</a></li>
+            </ul>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Best Collection For You</h1>
+            <p>Our hijab collection blends luxurious fabrics, modern hues, and graceful designs—helping you showcase your personal style with confidence and elegance.</p>
+            <a href="#collections" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- ALL PRODUCTS SECTION -->
+    <section id="products" class="products">
+        <div class="container">
+
+            <!-- OUR COLLECTIONS SECTION -->
+            <div id="collections" class="category-section">
+                <div class="category-header" onclick="toggleCategory('collections-content')">
+                    <h2>Our Collections</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div id="collections-content" class="category-content">
+                    <div class="product-grid">
+                        <!-- PRODUCT 1 - WITH IMAGE VARIANTS -->
+                        <div class="product-card">
+                            <div class="sale-badge">Sale</div>
+                            <div class="product-image">
+                                <img src="https://i.ibb.co/0RfpHCRW/Eggplant.jpg" alt="Premium Hijab Collection" id="collection-main">
+                            </div>
+                            <div class="product-info">
+                                <h3>Premium Hijab Collection</h3>
+                                <div class="price">
+                                    <span class="original-price">Rs. 550.00</span>
+                                    <span class="sale-price">Rs. 490.00</span>
+                                </div>
+                                
+                                <!-- IMAGE VARIANTS -->
+                                <div class="image-variants">
+                                    <!-- First 10 variants -->
+                                    <div class="image-option selected" 
+                                         data-image="https://i.ibb.co/Xx3NgTMc/Army-Green.webp"
+                                         data-variant-name="Army Green"
+                                         onclick="changeVariantImage('collection-main', this)">
+                                        <img src="https://i.ibb.co/Xx3NgTMc/Army-Green.webp" alt="Army Green">
+                                        <div class="variant-name-tag">ArmyGreen</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/gbGXSYNs/Beige.webp"
+                                         data-variant-name="Beige"
+                                         onclick="changeVariantImage('collection-main', this)">
+                                        <img src="https://i.ibb.co/gbGXSYNs/Beige.webp" alt="Beige">
+                                        <div class="variant-name-tag">Beige</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/n8jLdvkj/Bottle-Green.jpg"
+                                         data-variant-name="Bottel Green"
+                                         onclick="changeVariantImage('collection-main', this)">
+                                        <img src="https://i.ibb.co/n8jLdvkj/Bottle-Green.jpg" alt="Bottle Green">
+                                        <div class="variant-name-tag">Bottle Green</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/7JMjJtBp/Black-Hijab.webp"
+                                         data-variant-name="Black"
+                                         onclick="changeVariantImage('collection-main', this)">
+                                        <img src="https://i.ibb.co/7JMjJtBp/Black-Hijab.webp" alt="Black">
+                                        <div class="variant-name-tag">Black</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- STOCK INFORMATION -->
+                                <div class="stock-info">
+                                    <span class="in-stock">In Stock (15+)</span>
+                                </div>
+                                
+                                <button class="btn" onclick="showProductDetails('collection-hijab', this)">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <!-- TURKISH LAWN PRODUCT -->
+                        <div class="product-card">
+                            <div class="sale-badge">Sale</div>
+                            <div class="product-image">
+                                <img src="https://i.ibb.co/5hXpFNkQ/109-946017c3-0530-4e16-87e6-a15f50ea282b-633x-progressive.webp" alt="Turkish Lawn Hijab" id="turkish-main">
+                            </div>
+                            <div class="product-info">
+                                <h3>Turkish Lawn Hijab</h3>
+                                <div class="price">
+                                    <span class="original-price">Rs. 550.00</span>
+                                    <span class="sale-price">Rs. 490.00</span>
+                                </div>
+                                
+                                <!-- IMAGE VARIANTS -->
+                                <div class="image-variants">
+                                    <!-- First 10 variants -->
+                                    <div class="image-option selected" 
+                                         data-image="https://i.ibb.co/5hXpFNkQ/109-946017c3-0530-4e16-87e6-a15f50ea282b-633x-progressive.webp"
+                                         data-variant-name="Royal Blue"
+                                         onclick="changeVariantImage('turkish-main', this)">
+                                        <img src="https://i.ibb.co/5hXpFNkQ/109-946017c3-0530-4e16-87e6-a15f50ea282b-633x-progressive.webp" alt="Royal Blue">
+                                        <div class="variant-name-tag">Royal Blue</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/xyz123/Royal-Blue.jpg"
+                                         data-variant-name="Navy"
+                                         onclick="changeVariantImage('turkish-main', this)">
+                                        <img src="https://i.ibb.co/xyz123/Royal-Blue.jpg" alt="Navy">
+                                        <div class="variant-name-tag">Navy</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/uvw456/Bright-Blue.jpg"
+                                         data-variant-name="Sky Blue"
+                                         onclick="changeVariantImage('turkish-main', this)">
+                                        <img src="https://i.ibb.co/uvw456/Bright-Blue.jpg" alt="Sky Blue">
+                                        <div class="variant-name-tag">Sky Blue</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/opq789/Sky-Blue.jpg"
+                                         data-variant-name="Turquoise"
+                                         onclick="changeVariantImage('turkish-main', this)">
+                                        <img src="https://i.ibb.co/opq789/Sky-Blue.jpg" alt="Turquoise">
+                                        <div class="variant-name-tag">Turquoise</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- STOCK INFORMATION -->
+                                <div class="stock-info">
+                                    <span class="in-stock">In Stock (10+)</span>
+                                </div>
+                                
+                                <button class="btn" onclick="showProductDetails('turkish-hijab', this)">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <!-- CRINKLE SILK HIJABS PRODUCT -->
+                        <div class="product-card">
+                            <div class="sale-badge">Sale</div>
+                            <div class="product-image">
+                                <img src="https://i.ibb.co/6nLfQ9R/Burgundy-Georgette-Hijab.jpg" alt="Crinkle Silk Hijab" id="crinkle-main">
+                            </div>
+                            <div class="product-info">
+                                <h3>Crinkle Silk Hijab</h3>
+                                <div class="price">
+                                    <span class="original-price">Rs. 750.00</span>
+                                    <span class="sale-price">Rs. 650.00</span>
+                                </div>
+                                
+                                <!-- IMAGE VARIANTS -->
+                                <div class="image-variants">
+                                    <!-- First 10 variants -->
+                                    <div class="image-option selected" 
+                                         data-image="https://i.ibb.co/6nLfQ9R/Burgundy-Georgette-Hijab.jpg"
+                                         data-variant-name="Burgundy"
+                                         onclick="changeVariantImage('crinkle-main', this)">
+                                        <img src="https://i.ibb.co/6nLfQ9R/Burgundy-Georgette-Hijab.jpg" alt="Burgundy">
+                                        <div class="variant-name-tag">Burgundy</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/abc123/Wine.jpg"
+                                         data-variant-name="Wine Red"
+                                         onclick="changeVariantImage('crinkle-main', this)">
+                                        <img src="https://i.ibb.co/abc123/Wine.jpg" alt="Wine Red">
+                                        <div class="variant-name-tag">Wine Red</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/def456/Ruby-Red.jpg"
+                                         data-variant-name="Ruby"
+                                         onclick="changeVariantImage('crinkle-main', this)">
+                                        <img src="https://i.ibb.co/def456/Ruby-Red.jpg" alt="Ruby">
+                                        <div class="variant-name-tag">Ruby</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/ghi789/Crimson.jpg"
+                                         data-variant-name="Crimson"
+                                         onclick="changeVariantImage('crinkle-main', this)">
+                                        <img src="https://i.ibb.co/ghi789/Crimson.jpg" alt="Crimson">
+                                        <div class="variant-name-tag">Crimson</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- STOCK INFORMATION -->
+                                <div class="stock-info">
+                                    <span class="in-stock">In Stock (12+)</span>
+                                </div>
+                                
+                                <button class="btn" onclick="showProductDetails('crinkle-hijab', this)">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <!-- HIJAB ACCESSORIES PRODUCT -->
+                        <div class="product-card">
+                            <div class="sale-badge">Sale</div>
+                            <div class="product-image">
+                                <img src="https://i.ibb.co/4W9J1Cq/Hijab-Accessories.jpg" alt="Hijab Accessories" id="accessories-main">
+                            </div>
+                            <div class="product-info">
+                                <h3>Hijab Accessories</h3>
+                                <div class="price">
+                                    <span class="original-price">Rs. 350.00</span>
+                                    <span class="sale-price">Rs. 290.00</span>
+                                </div>
+                                
+                                <!-- IMAGE VARIANTS -->
+                                <div class="image-variants">
+                                    <!-- First 10 variants -->
+                                    <div class="image-option selected" 
+                                         data-image="https://i.ibb.co/4W9J1Cq/Hijab-Accessories.jpg"
+                                         data-variant-name="Undercap Set"
+                                         onclick="changeVariantImage('accessories-main', this)">
+                                        <img src="https://i.ibb.co/4W9J1Cq/Hijab-Accessories.jpg" alt="Undercap Set">
+                                        <div class="variant-name-tag">Undercap Set</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/abc123/Accessory-2.jpg"
+                                         data-variant-name="Magnetic Pins"
+                                         onclick="changeVariantImage('accessories-main', this)">
+                                        <img src="https://i.ibb.co/abc123/Accessory-2.jpg" alt="Magnetic Pins">
+                                        <div class="variant-name-tag">Magnetic Pins</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/def456/Accessory-3.jpg"
+                                         data-variant-name="Decorative Brooch"
+                                         onclick="changeVariantImage('accessories-main', this)">
+                                        <img src="https://i.ibb.co/def456/Accessory-3.jpg" alt="Decorative Brooch">
+                                        <div class="variant-name-tag">Brooch</div>
+                                    </div>
+                                    <div class="image-option" 
+                                         data-image="https://i.ibb.co/ghi789/Accessory-4.jpg"
+                                         data-variant-name="Hijab Band"
+                                         onclick="changeVariantImage('accessories-main', this)">
+                                        <img src="https://i.ibb.co/ghi789/Accessory-4.jpg" alt="Hijab Band">
+                                        <div class="variant-name-tag">Hijab Band</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- STOCK INFORMATION -->
+                                <div class="stock-info">
+                                    <span class="in-stock">In Stock (20+)</span>
+                                </div>
+                                
+                                <button class="btn" onclick="showProductDetails('accessory-item', this)">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FEATURED TEXT SECTION -->
+    <section class="featured-text">
+        <div class="container">
+            <p>"At Hijab Insta Corner, we believe that modesty and style go hand in hand. Our carefully curated collection offers premium quality hijabs that are both elegant and comfortable, allowing you to express your unique personality while staying true to your values."</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The quality of these hijabs is exceptional! I love the variety of colors and the fabric is so comfortable to wear all day."</p>
+                    <p class="testimonial-author">- Aisha Khan</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Fast shipping and beautiful packaging. The hijab I ordered is even more beautiful in person. Will definitely shop again!"</p>
+                    <p class="testimonial-author">- Fatima Ahmed</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I'm so impressed with the customer service. They helped me choose the perfect hijab for a special occasion. Highly recommend!"</p>
+                    <p class="testimonial-author">- Zainab Ali</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Hijab Insta Corner</h3>
+                    <p>Providing high-quality, fashionable hijabs for the modern Muslim woman since 2015.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#collections">Our Collections</a></li>
+                        <li><a href="#turkish">Turkish Lawn</a></li>
+                        <li><a href="#crinkle">Crinkle Silk Hijabs</a></li>
+                        <li><a href="#accessories">Hijab Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Karachi</li>
+                        <li><i class="fas fa-phone"></i> +92 321 1234567</li>
+                        <li><i class="fas fa-envelope"></i> info@hijabinstacorner.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Hijab Insta Corner. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('product-modal')">&times;</span>
+            <div class="product-details">
+                <div class="product-gallery">
+                    <div class="main-gallery-image">
+                        <img id="modal-main-image" src="" alt="Product Image">
+                    </div>
+                    <!-- Thumbnails removed as requested -->
+                </div>
+                <div class="product-detail-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <div class="detail-price" id="modal-product-price">Rs. 490.00</div>
+                    <p class="product-description" id="modal-product-description">
+                        This premium hijab is made from high-quality fabric that is soft, breathable, and perfect for everyday wear. The elegant design and wide range of colors make it a versatile addition to any wardrobe.
+                    </p>
+                    
+                    <div class="image-variants" id="modal-image-variants">
+                        <!-- Image variants will be added dynamically -->
+                    </div>
+                    
+                    <div class="stock-info">
+                        <span class="in-stock" id="modal-stock-info">In Stock (15+)</span>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    
+                    <button class="btn" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('cart-modal')">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be added dynamically -->
+                <p id="empty-cart-message">Your cart is empty.</p>
+            </div>
+            
+            <div class="delivery-charge">
+                <span>Delivery Charges:</span>
+                <span id="delivery-charge">Rs. 200.00</span>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">Rs. 0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button class="btn" onclick="closeModal('cart-modal')">Continue Shopping</button>
+                <button class="btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('checkout-modal')">&times;</span>
+            <h2>Checkout</h2>
+            <form class="checkout-form" id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="name-error">Please enter your name</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span class="optional-badge">Optional</span></label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error-message" id="phone-error">Please enter a valid phone number</div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="address">Shipping Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <div class="error-message" id="address-error">Please enter your address</div>
+                </div>
+                <div class="form-group">
+                    <label for="city">City <span class="required">*</span></label>
+                    <input type="text" id="city" name="city" required>
+                    <div class="error-message" id="city-error">Please enter your city</div>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP Code <span class="required">*</span></label>
+                    <input type="text" id="zip" name="zip" required>
+                    <div class="error-message" id="zip-error">Please enter your ZIP code</div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="payment">Payment Method <span class="required">*</span></label>
+                    <select id="payment" name="payment" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                    <div class="error-message" id="payment-error">Please select a payment method</div>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="btn">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION MODAL -->
+    <div id="order-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="order-confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h2>Thank You For Your Order!</h2>
+                <p>Your order has been placed successfully. We will process it shortly and send you a confirmation Message on whatsApp.</p>
+                <p>Order Number: <strong>#HC2023-<span id="order-number"></span></strong></p>
+                <button class="btn" onclick="closeModal('order-confirmation-modal')">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product Data
+        const products = {
+            'collection-hijab': {
+                title: 'Premium Hijab Collection',
+                price: 490,
+                originalPrice: 550,
+                description: 'Our premium hijab collection features 30 beautiful color options made from high-quality georgette chiffon fabric. These hijabs are lightweight, breathable, and perfect for everyday wear. Each hijab measures 70x70 inches, providing full coverage and versatile styling options.',
+                images: [
+                    {url: 'https://i.ibb.co/Xx3NgTMc/Army-Green.webp', name: 'Army Green'},
+                    {url: 'https://i.ibb.co/gbGXSYNs/Beige.webp', name: 'Beige'},
+                    {url: 'https://i.ibb.co/n8jLdvkj/Bottle-Green.jpg', name: 'Bottle Green'},
+                    {url: 'https://i.ibb.co/7JMjJtBp/Black-Hijab.webp', name: 'Black'},
+                    {url: 'https://i.ibb.co/3Y8JwwY9/Bronze.webp', name: 'Bronze'},
+                    {url: 'https://i.ibb.co/zHSJ0Fc2/Brown.webp', name: 'Brown'},
+                    {url: 'https://i.ibb.co/b5btJBrq/Coffee-Color.webp', name: 'Coffee'},
+                    {url: 'https://i.ibb.co/ks9LxVX7/Cream.jpg', name: 'Cream'},
+		    {url: 'https://i.ibb.co/RTPZ4xYq/Dark-Brown.jpg', name: 'Dark Brown'},
+		    {url: 'https://i.ibb.co/Z6p811hz/Egg-Plant.webp', name: 'Egg Plant'},
+		    {url: 'https://i.ibb.co/ksyXhSW6/Grey.jpg', name: 'Grey'},
+		    {url: 'https://i.ibb.co/1fvVXdL4/Khaki.jpg', name: 'Khaki'},
+		    {url: 'https://i.ibb.co/v4H8cZbg/Lavendar.webp', name: 'Lavendar'},
+		    {url: 'https://i.ibb.co/vKC04DH/Light-Purple.jpg', name: 'Light Purple'},
+		    {url: 'https://i.ibb.co/QF1h3GKZ/Mauve.webp', name: 'Mauve'},
+		    {url: 'https://i.ibb.co/tT0NhRb9/Maroon.webp', name: 'Maroon'},
+		    {url: 'https://i.ibb.co/q3dWfpgq/Mint.webp', name: 'Mint'},
+		    {url: 'https://i.ibb.co/4RtwRXtk/Mustard.webp', name: 'Musturd'},
+		    {url: 'https://i.ibb.co/tw1n0S25/NavyBlue.webp', name: 'Navy Blue'},
+		    {url: 'https://i.ibb.co/yFZsNPYk/Nude-Pink.jpg', name: 'Nude Pink'},
+		    {url: 'https://i.ibb.co/TqW8bJKv/Peach.jpg', name: 'Peach'},
+		    {url: 'https://i.ibb.co/d4bPyWNS/Pista-Green.jpg', name: 'Pista Green'},
+		    {url: 'https://i.ibb.co/NgGR8Gx6/Plum.webp', name: 'Plum'},
+		    {url: 'https://i.ibb.co/bjZpxkV0/Purpleplum.webp', name: 'Purple plum'},
+		    {url: 'https://i.ibb.co/1tHyJny9/Rose-Red.webp', name: 'Rose Red'},
+		    {url: 'https://i.ibb.co/yBXhdYXf/Rosy-Pink.webp', name: 'Rosy Pink'},
+		    {url: 'https://i.ibb.co/LhbWLvXb/Sky-Blue.webp', name: 'Sky Blue'},
+		    {url: 'https://i.ibb.co/Q3G8kvCf/Sage-Green.webp', name: 'Sage Green'},
+		    {url: 'https://i.ibb.co/nNyvdWXy/TeaPink.webp', name: 'Tea Pink'},
+		    {url: 'https://i.ibb.co/bgYTtnp7/Soft-Berry.webp', name: 'Soft Berry'},
+		    {url: 'https://i.ibb.co/gZrB0ytQ/White.webp', name: 'White'},
+		    {url: 'https://i.ibb.co/XrZsFSDm/Wine.webp', name: 'Wine'},
+		    {url: 'https://i.ibb.co/fVwvHFnt/Zinc.webp', name: 'Zinc'},
+                ],
+                stock: 'In Stock (15+)'
+            },
+            'turkish-hijab': {
+                title: 'Turkish Lawn Hijab',
+                price: 490,
+                originalPrice: 550,
+                description: 'Experience luxury with our Turkish Lawn hijab collection. These hijabs are crafted from premium Turkish lawn fabric known for its softness, durability, and elegant drape. With 20 stunning color options, these hijabs are perfect for special occasions and everyday elegance.',
+                images: [
+                    {url: 'https://i.ibb.co/5hXpFNkQ/109-946017c3-0530-4e16-87e6-a15f50ea282b-633x-progressive.webp', name: 'Royal Blue'},
+                    {url: 'https://i.ibb.co/xyz123/Royal-Blue.jpg', name: 'Navy'},
+                    {url: 'https://i.ibb.co/uvw456/Bright-Blue.jpg', name: 'Sky Blue'},
+                    {url: 'https://i.ibb.co/opq789/Sky-Blue.jpg', name: 'Turquoise'},
+                    {url: 'https://i.ibb.co/cde123/Turkish-5.jpg', name: 'Sapphire'},
+                    {url: 'https://i.ibb.co/efg456/Turkish-6.jpg', name: 'Teal'},
+                    {url: 'https://i.ibb.co/hij789/Turkish-7.jpg', name: 'Peacock'},
+                    {url: 'https://i.ibb.co/klm012/Turkish-8.jpg', name: 'Ocean Blue'},
+                ],
+                stock: 'In Stock (10+)'
+            },
+            'crinkle-hijab': {
+                title: 'Crinkle Silk Hijab',
+                price: 650,
+                originalPrice: 750,
+                description: 'Our Crinkle Silk Hijab collection offers 20 exquisite color options with a beautiful crinkle texture that adds dimension to your style. These hijabs are made from high-quality silk blend fabric that is lightweight, breathable, and easy to maintain. The crinkle texture helps the hijab hold its shape throughout the day.',
+                images: [
+                    {url: 'https://i.ibb.co/6nLfQ9R/Burgundy-Georgette-Hijab.jpg', name: 'Burgundy'},
+                    {url: 'https://i.ibb.co/abc123/Wine.jpg', name: 'Wine Red'},
+                    {url: 'https://i.ibb.co/def456/Ruby-Red.jpg', name: 'Ruby'},
+                    {url: 'https://i.ibb.co/ghi789/Crimson.jpg', name: 'Crimson'},
+                    {url: 'https://i.ibb.co/jkl012/Crinkle-5.jpg', name: 'Scarlet'},
+                    {url: 'https://i.ibb.co/mno345/Crinkle-6.jpg', name: 'Maroon'},
+                    {url: 'https://i.ibb.co/pqr678/Crinkle-7.jpg', name: 'Berry'},
+                    {url: 'https://i.ibb.co/stu901/Crinkle-8.jpg', name: 'Garnet'},
+                ],
+                stock: 'In Stock (12+)'
+            },
+            'accessory-item': {
+                title: 'Hijab Accessories',
+                price: 290,
+                originalPrice: 350,
+                description: 'Complete your hijab style with our collection of premium hijab accessories. From undercaps and pins to stylish brooches and bands, we have everything you need to secure and accessorize your hijab. Our accessories are designed for comfort, functionality, and style.',
+                images: [
+                    {url: 'https://i.ibb.co/4W9J1Cq/Hijab-Accessories.jpg', name: 'Undercap Set'},
+                    {url: 'https://i.ibb.co/abc123/Accessory-2.jpg', name: 'Magnetic Pins'},
+                    {url: 'https://i.ibb.co/def456/Accessory-3.jpg', name: 'Decorative Brooch'},
+                    {url: 'https://i.ibb.co/ghi789/Accessory-4.jpg', name: 'Hijab Band'},
+                    {url: 'https://i.ibb.co/jkl012/Accessory-5.jpg', name: 'Pin Set'},
+                    {url: 'https://i.ibb.co/mno345/Accessory-6.jpg', name: 'Cap & Band Combo'},
+                    {url: 'https://i.ibb.co/pqr678/Accessory-7.jpg', name: 'Pearl Pins'},
+                    {url: 'https://i.ibb.co/stu901/Accessory-8.jpg', name: 'Crystal Brooch'},
+                ],
+                stock: 'In Stock (20+)'
+            }
+        };
+
+        // Cart functionality
+        let cart = [];
+        let currentProduct = null;
+        let currentVariantIndex = 0;
+        const DELIVERY_CHARGE = 200;
+
+        // Toggle category expansion
+        function toggleCategory(categoryId) {
+            const content = document.getElementById(categoryId);
+            const icon = content.previousElementSibling.querySelector('.toggle-icon');
+            
+            content.classList.toggle('expanded');
+            icon.textContent = content.classList.contains('expanded') ? '-' : '+';
+        }
+
+        // Change variant image
+        function changeVariantImage(mainImageId, element) {
+            const mainImage = document.getElementById(mainImageId);
+            const newImageSrc = element.getAttribute('data-image');
+            
+            // Update main image
+            mainImage.src = newImageSrc;
+            mainImage.alt = element.querySelector('img').alt;
+            
+            // Update selected class
+            const options = element.parentElement.querySelectorAll('.image-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // Show product details modal
+        function showProductDetails(productId, button) {
+            currentProduct = products[productId];
+            currentVariantIndex = 0;
+            
+            const modal = document.getElementById('product-modal');
+            const productCard = button.closest('.product-card');
+            const selectedImage = productCard.querySelector('.image-option.selected img').src;
+            
+            // Update modal content
+            document.getElementById('modal-product-title').textContent = currentProduct.title;
+            document.getElementById('modal-product-price').textContent = `Rs. ${currentProduct.price.toFixed(2)}`;
+            document.getElementById('modal-product-description').textContent = currentProduct.description;
+            document.getElementById('modal-stock-info').textContent = currentProduct.stock;
+            document.getElementById('modal-main-image').src = selectedImage;
+            
+            // Create image variants for modal
+            const variantsContainer = document.getElementById('modal-image-variants');
+            variantsContainer.innerHTML = '';
+            
+            currentProduct.images.forEach((image, index) => {
+                const variant = document.createElement('div');
+                variant.className = `image-option ${index === 0 ? 'selected' : ''}`;
+                variant.setAttribute('data-image', image.url);
+                variant.onclick = function() {
+                    selectVariant(index);
+                };
+                
+                const img = document.createElement('img');
+                img.src = image.url;
+                img.alt = `${currentProduct.title} - ${image.name}`;
+                
+                const nameTag = document.createElement('div');
+                nameTag.className = 'variant-name-tag';
+                nameTag.textContent = image.name;
+                
+                variant.appendChild(img);
+                variant.appendChild(nameTag);
+                variantsContainer.appendChild(variant);
+            });
+            
+            // Show modal
+            modal.style.display = 'block';
+        }
+
+        // Select variant in modal
+        function selectVariant(index) {
+            currentVariantIndex = index;
+            document.getElementById('modal-main-image').src = currentProduct.images[index].url;
+            
+            // Update selected variant
+            const variants = document.getElementById('modal-image-variants').querySelectorAll('.image-option');
+            variants.forEach((v, i) => {
+                v.classList.toggle('selected', i === index);
+            });
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Add to cart
+        function addToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            
+            // Check if product is already in cart
+            const existingItemIndex = cart.findIndex(item => 
+                item.product.title === currentProduct.title && item.variantIndex === currentVariantIndex
+            );
+            
+            if (existingItemIndex >= 0) {
+                // Update quantity if already in cart
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                // Add new item to cart
+                cart.push({
+                    product: currentProduct,
+                    variantIndex: currentVariantIndex,
+                    quantity: quantity
+                });
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show success message but don't close the modal
+            alert('Product added to cart!');
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = totalItems;
+        }
+
+        // Show cart modal
+        document.getElementById('cart-icon').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCartModal();
+        });
+
+        function showCartModal() {
+            const cartItems = document.getElementById('cart-items');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+            
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartItems.innerHTML = '';
+                document.getElementById('delivery-charge').textContent = 'Rs. 0.00';
+                cartTotalPrice.textContent = 'Rs. 0.00';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                
+                // Clear existing items
+                cartItems.innerHTML = '';
+                
+                let subtotal = 0;
+                
+                // Add items to cart
+                cart.forEach((item, index) => {
+                    const itemTotal = item.product.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-image">
+                                <img src="${item.product.images[item.variantIndex].url}" alt="${item.product.title}">
+                            </div>
+                            <div class="cart-item-details">
+                                <h3>${item.product.title}</h3>
+                                <div class="cart-item-color">
+                                    <span>Color: ${item.product.images[item.variantIndex].name}</span>
+                                </div>
+                                <div class="price">
+                                    <span class="sale-price">Rs. ${item.product.price.toFixed(2)}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-item-controls">
+                            <input type="number" class="cart-item-quantity" value="${item.quantity}" min="1" onchange="updateCartItemQuantity(${index}, this.value)">
+                            <button class="remove-from-cart" onclick="removeFromCart(${index})"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Update delivery charge and total price
+                document.getElementById('delivery-charge').textContent = `Rs. ${DELIVERY_CHARGE.toFixed(2)}`;
+                const total = subtotal + DELIVERY_CHARGE;
+                cartTotalPrice.textContent = `Rs. ${total.toFixed(2)}`;
+            }
+            
+            // Show cart modal
+            document.getElementById('cart-modal').style.display = 'block';
+        }
+
+        // Update cart item quantity
+        function updateCartItemQuantity(index, newQuantity) {
+            newQuantity = parseInt(newQuantity) || 1;
+            if (newQuantity < 1) newQuantity = 1;
+            
+            cart[index].quantity = newQuantity;
+            showCartModal(); // Refresh cart modal
+            updateCartCount();
+        }
+
+        // Remove from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            showCartModal(); // Refresh cart modal
+            updateCartCount();
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            closeModal('cart-modal');
+            document.getElementById('checkout-modal').style.display = 'block';
+        }
+
+        // Handle checkout form submission
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            let isValid = true;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const zip = document.getElementById('zip').value;
+            const payment = document.getElementById('payment').value;
+            
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Validate name
+            if (!name) {
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate phone
+            if (!phone) {
+                document.getElementById('phone-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate address
+            if (!address) {
+                document.getElementById('address-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate city
+            if (!city) {
+                document.getElementById('city-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate ZIP
+            if (!zip) {
+                document.getElementById('zip-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate payment
+            if (!payment) {
+                document.getElementById('payment-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Generate random order number
+                const orderNumber = Math.floor(1000 + Math.random() * 9000);
+                document.getElementById('order-number').textContent = orderNumber;
+                
+                // Close checkout modal and show confirmation
+                closeModal('checkout-modal');
+                document.getElementById('order-confirmation-modal').style.display = 'block';
+                
+                // Clear cart
+                cart = [];
+                updateCartCount();
+            }
+        });
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target === modals[i]) {
+                    modals[i].style.display = 'none';
+                }
+            }
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Expand the first category by default
+            toggleCategory('collections-content');
+        });
+    </script>
+</body>
+</html>
